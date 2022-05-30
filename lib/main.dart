@@ -1,5 +1,3 @@
-import 'dart:developer';
-
 import 'package:flutter/material.dart';
 import 'package:spring/balance.dart';
 import 'package:spring/cometowork.dart';
