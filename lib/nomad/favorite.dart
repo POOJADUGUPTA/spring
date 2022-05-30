@@ -11,7 +11,7 @@ class _FavoriteState extends State<Favorite> {
   @override
   Widget build(BuildContext context) {
     return Container(
-      color: Colors.pink,
+      color: Colors.green,
       child: const Text("favorite", style: TextStyle(fontSize: 50)),
     );
   }
