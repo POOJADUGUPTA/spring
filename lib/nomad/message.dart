@@ -11,7 +11,7 @@ class _MessageState extends State<Message> {
   @override
   Widget build(BuildContext context) {
     return Container(
-      color: Colors.cyan,
+      color: Colors.lightBlue,
       child: const Text("nomad", style: TextStyle(fontSize: 50)),
     );
   }
