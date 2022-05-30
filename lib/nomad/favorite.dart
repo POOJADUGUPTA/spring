@@ -12,7 +12,7 @@ class _FavoriteState extends State<Favorite> {
   Widget build(BuildContext context) {
     return Container(
       color: Colors.green,
-      child: Text("favorite", style: TextStyle(fontSize: 30)),
+      child: const Text("favorite", style: TextStyle(fontSize: 50)),
     );
   }
 }

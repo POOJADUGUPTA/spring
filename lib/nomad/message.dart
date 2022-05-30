@@ -12,7 +12,7 @@ class _MessageState extends State<Message> {
   Widget build(BuildContext context) {
     return Container(
       color: Colors.cyan,
-      child: Text("nomad", style: TextStyle(fontSize: 30)),
+      child: const Text("nomad", style: TextStyle(fontSize: 50)),
     );
   }
 }

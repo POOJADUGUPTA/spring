@@ -159,7 +159,7 @@
         <entry key="spring">
           <value>
             <list>
-              <option value="$USER_HOME$/lib" />
+              <option value="$PROJECT_DIR$/../lib" />
             </list>
           </value>
         </entry>
@@ -222,6 +222,7 @@
       </option>
     </properties>
     <CLASSES>
+      <root url="file://$PROJECT_DIR$/../lib" />
       <root url="file://$USER_HOME$/developer/flutter/.pub-cache/hosted/pub.dartlang.org/async-2.8.2/lib" />
       <root url="file://$USER_HOME$/developer/flutter/.pub-cache/hosted/pub.dartlang.org/boolean_selector-2.1.0/lib" />
       <root url="file://$USER_HOME$/developer/flutter/.pub-cache/hosted/pub.dartlang.org/characters-1.2.0/lib" />
@@ -252,7 +253,6 @@
       <root url="file://$USER_HOME$/developer/flutter/bin/cache/pkg/sky_engine/lib" />
       <root url="file://$USER_HOME$/developer/flutter/packages/flutter/lib" />
       <root url="file://$USER_HOME$/developer/flutter/packages/flutter_test/lib" />
-      <root url="file://$USER_HOME$/lib" />
     </CLASSES>
     <JAVADOC />
     <SOURCES />
