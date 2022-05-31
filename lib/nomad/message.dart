@@ -17,6 +17,7 @@ class _MessageState extends State<Message> {
         child: SingleChildScrollView(
           child: Column(
             children: [
+              const SizedBox(height: 10),
               const Image(height: 60, image: AssetImage("images/nomad.png")),
               const SizedBox(height: 15),
               const Text(
@@ -30,8 +31,8 @@ class _MessageState extends State<Message> {
                 ),
               ),
               const SizedBox(height: 15),
-              acceptButton("Accept"),
-              const SizedBox(height: 30)
+              acceptButton(),
+              const SizedBox(height: 40)
             ],
           ),
         ),
@@ -39,9 +40,9 @@ class _MessageState extends State<Message> {
     );
   }
 
-  Widget acceptButton(String title) {
+  Widget acceptButton() {
     return Container(
-      width: MediaQuery.of(context).size.width * 0.313,
+      width: 120,
       height: 32,
       child: Center(
         child: GestureDetector(
@@ -72,15 +73,16 @@ class _MessageState extends State<Message> {
 
   Widget okButton(String title) {
     return Container(
-      margin: const EdgeInsets.only(top: 28.0),
-      width: MediaQuery.of(context).size.width * 0.113,
-      height: 32,
+      height: 34,
       child: Center(
         child: Text(
           title,
           maxLines: 1,
           style: const TextStyle(
-              color: Colors.white, fontSize: 14, fontWeight: FontWeight.w700),
+              letterSpacing: 1,
+              color: Colors.white,
+              fontSize: 15,
+              fontWeight: FontWeight.w900),
         ),
       ),
       decoration: const BoxDecoration(
@@ -92,15 +94,15 @@ class _MessageState extends State<Message> {
               offset: Offset(0, 4), // changes position of shadow
             ),
           ],
-          borderRadius: BorderRadius.all(Radius.circular(20))),
+          borderRadius: BorderRadius.all(Radius.circular(5))),
     );
   }
 
   Widget dialog(BuildContext context) {
     return Dialog(
-      shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(20)),
+      shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(30)),
       insetPadding: EdgeInsets.symmetric(
-          horizontal: MediaQuery.of(context).size.width / 6),
+          horizontal: MediaQuery.of(context).size.width / 7),
       child: Column(
         mainAxisSize: MainAxisSize.min,
         children: [
@@ -109,37 +111,32 @@ class _MessageState extends State<Message> {
             clipBehavior: Clip.none,
             children: [
               Container(
-                width: MediaQuery.of(context).size.width * 0.671,
                 decoration: BoxDecoration(
-                  borderRadius: BorderRadius.circular(20),
+                  borderRadius: BorderRadius.circular(35),
                   color: Colors.white,
                 ),
                 child: Container(
                   decoration: BoxDecoration(
-                      border: Border.all(color: Color(0xff00A99D)),
-                      borderRadius: BorderRadius.circular(20)),
-                  margin: const EdgeInsets.all(16),
+                      border: Border.all(color: const Color(0xff00A99D)),
+                      borderRadius: BorderRadius.circular(25)),
+                  margin: const EdgeInsets.all(10),
+                  padding: const EdgeInsets.symmetric(horizontal: 65),
                   child: Column(
-                    mainAxisAlignment: MainAxisAlignment.spaceAround,
                     children: [
                       Container(
-                        padding: const EdgeInsets.only(bottom: 10, top: 20),
-                        width: MediaQuery.of(context).size.width * 0.437,
-                        child: TextFormField(
-                          decoration: const InputDecoration(
-                              hintText: "The Secure Connection",
-                              hintStyle: TextStyle(
-                                fontSize: 20,
-                                color: Color(0xffC4C4C4),
-                              )),
-                        ),
+                        padding: const EdgeInsets.only(top: 20),
+                        child: const Text("The Secure\nConnection",
+                            style: TextStyle(
+                              letterSpacing: 1,
+                              fontWeight: FontWeight.w900,
+                              fontSize: 22,
+                              color: Color(0xff00A99D),
+                            )),
                       ),
-                      Container(
-                        width: 100,
-                        child: Padding(
-                          padding: const EdgeInsets.only(bottom: 20),
-                          child: okButton("OK"),
-                        ),
+                      const SizedBox(height: 10),
+                      Padding(
+                        padding: const EdgeInsets.only(bottom: 20),
+                        child: okButton("OK"),
                       )
                     ],
                   ),
@@ -155,19 +152,17 @@ class _MessageState extends State<Message> {
 
   Widget closeButton() {
     return Positioned(
-      right: 5,
+      right: 6,
       child: Align(
         alignment: Alignment.topRight,
         child: Padding(
-          padding: EdgeInsets.symmetric(
-              horizontal: MediaQuery.of(context).size.width * 0.0082,
-              vertical: MediaQuery.of(context).size.height * 0.016),
+          padding: const EdgeInsets.only(top: 10),
           child: GestureDetector(
             onTap: () {
               Navigator.of(context).pop();
             },
             child: const CircleAvatar(
-              radius: 15,
+              radius: 13,
               child: Icon(
                 Icons.close,
                 size: 24,

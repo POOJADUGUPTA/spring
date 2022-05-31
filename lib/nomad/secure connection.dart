@@ -63,8 +63,8 @@ class _ConnectionState extends State<Connection> {
             child: Column(
               children: [
                 const Padding(
-                  padding: EdgeInsets.only(top: 45, left: 40, right: 40),
-                  child: Text("Check-In To Your\nWorkspace",
+                  padding: EdgeInsets.only(top: 45, left: 25, right: 25),
+                  child: Text("Launch A Secure\nConnection",
                       textAlign: TextAlign.center,
                       style: TextStyle(
                         letterSpacing: 0.8,
@@ -73,40 +73,40 @@ class _ConnectionState extends State<Connection> {
                         color: Color(0xff00A99D),
                       )),
                 ),
-                const SizedBox(height: 15),
+                const SizedBox(height: 10),
                 Container(
-                  padding: const EdgeInsets.only(left: 70),
+                  padding: const EdgeInsets.only(left: 60),
                   child: Column(
                     children: [
                       Row(
                         children: [
                           Container(
-                            height: 25,
-                            width: 25,
+                            height: 28,
+                            width: 28,
                             decoration: BoxDecoration(
                                 border:
                                     Border.all(color: const Color(0xff00A99D))),
                           ),
                           const SizedBox(width: 3),
                           Container(
-                            height: 25,
-                            width: 25,
+                            height: 28,
+                            width: 28,
                             decoration: BoxDecoration(
                                 border:
                                     Border.all(color: const Color(0xff00A99D))),
                           ),
                           const SizedBox(width: 3),
                           Container(
-                            height: 25,
-                            width: 25,
+                            height: 28,
+                            width: 28,
                             decoration: BoxDecoration(
                                 border:
                                     Border.all(color: const Color(0xff00A99D))),
                           ),
                           const SizedBox(width: 3),
                           Container(
-                            height: 25,
-                            width: 25,
+                            height: 28,
+                            width: 28,
                             decoration: BoxDecoration(
                                 border:
                                     Border.all(color: const Color(0xff00A99D))),
@@ -117,32 +117,32 @@ class _ConnectionState extends State<Connection> {
                       Row(
                         children: [
                           Container(
-                            height: 25,
-                            width: 25,
+                            height: 28,
+                            width: 28,
                             decoration: BoxDecoration(
                                 border:
                                     Border.all(color: const Color(0xff00A99D))),
                           ),
                           const SizedBox(width: 3),
                           Container(
-                            height: 25,
-                            width: 25,
+                            height: 28,
+                            width: 28,
                             decoration: BoxDecoration(
                                 border:
                                     Border.all(color: const Color(0xff00A99D))),
                           ),
                           const SizedBox(width: 3),
                           Container(
-                            height: 25,
-                            width: 25,
+                            height: 28,
+                            width: 28,
                             decoration: BoxDecoration(
                                 border:
                                     Border.all(color: const Color(0xff00A99D))),
                           ),
                           const SizedBox(width: 3),
                           Container(
-                            height: 25,
-                            width: 25,
+                            height: 28,
+                            width: 28,
                             decoration: BoxDecoration(
                                 border:
                                     Border.all(color: const Color(0xff00A99D))),
