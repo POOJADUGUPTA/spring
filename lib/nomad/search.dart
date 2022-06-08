@@ -1,5 +1,8 @@
 import 'package:flutter/material.dart';
 
+import 'facility_description.dart';
+import 'mobile_login.dart';
+
 class Search extends StatefulWidget {
   const Search({Key? key}) : super(key: key);
 
@@ -99,8 +102,8 @@ class _SearchState extends State<Search> {
             color: const Color(0xffF22525),
             shape: const CircleBorder(),
             onPressed: () {
-              // Navigator.push(context,
-              //     MaterialPageRoute(builder: (context) => const CheckIn()));
+              Navigator.push(context,
+                  MaterialPageRoute(builder: (context) => const MobileLogin()));
             },
             child: const Padding(
               padding: EdgeInsets.all(10),
@@ -127,16 +130,17 @@ class _SearchState extends State<Search> {
             style: TextStyle(fontSize: 15, color: Colors.white)),
         const SizedBox(height: 15),
         Container(
-          padding: EdgeInsets.only(
-            left: MediaQuery.of(context).size.width * 0.020,
-            right: MediaQuery.of(context).size.width * 0.020,
-            top: MediaQuery.of(context).size.width * 0.005,
-            bottom: MediaQuery.of(context).size.width * 0.005,
-          ),
+          height: MediaQuery.of(context).size.height * 0.050,
+          width: MediaQuery.of(context).size.height * 0.180,
           decoration: BoxDecoration(
               color: Colors.white, borderRadius: BorderRadius.circular(3)),
           child: MaterialButton(
-            onPressed: () {},
+            onPressed: () {
+              Navigator.push(
+                  context,
+                  MaterialPageRoute(
+                      builder: (context) => const FacilityDescription()));
+            },
             child: const Text("Learn How",
                 style: TextStyle(
                     fontWeight: FontWeight.w900,

@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 
+//CheckinMobileView
 class CheckIn extends StatefulWidget {
   const CheckIn({Key? key}) : super(key: key);
 

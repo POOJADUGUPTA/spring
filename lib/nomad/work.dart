@@ -4,9 +4,17 @@ import 'package:spring/nomad/message.dart';
 import 'package:spring/nomad/nomad.dart';
 import 'package:spring/nomad/profile.dart';
 import 'package:spring/nomad/search.dart';
+import 'package:spring/workspace_api/workspace_response.dart';
+
+import 'favorielistmobileview.dart';
+import 'listyourspace.dart';
 
 class WorkWhereYouAre extends StatefulWidget {
-  const WorkWhereYouAre({Key? key}) : super(key: key);
+  final List<Workspaces>? workSpaces;
+  const WorkWhereYouAre({
+    Key? key,
+    this.workSpaces,
+  }) : super(key: key);
 
   @override
   State<WorkWhereYouAre> createState() => _WorkWhereYouAreState();
@@ -18,14 +26,16 @@ class _WorkWhereYouAreState extends State<WorkWhereYouAre> {
 
   List<Widget> widgetOptions = <Widget>[
     Search(),
-    Favorite(),
+    FavoriteListMobileView(),
     Nomad(),
     Message(),
-    Profile(),
+    ListYourSpace(),
   ];
 
   @override
   Widget build(BuildContext context) {
+    print("ghghg${widget.workSpaces?.length}");
+
     return Scaffold(
       extendBody: true,
       bottomNavigationBar: bottomIcon(),

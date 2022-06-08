@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 
+//VPNConnectionMobileView
 class Connection extends StatefulWidget {
   const Connection({Key? key}) : super(key: key);
 
@@ -29,6 +30,7 @@ class _ConnectionState extends State<Connection> {
       padding: const EdgeInsets.all(20),
       child: Column(
         children: [
+          //mobileheader
           Row(
             mainAxisAlignment: MainAxisAlignment.spaceBetween,
             children: const [
@@ -73,80 +75,28 @@ class _ConnectionState extends State<Connection> {
                         color: Color(0xff00A99D),
                       )),
                 ),
-                const SizedBox(height: 10),
+                const SizedBox(height: 20),
                 Container(
-                  padding: const EdgeInsets.only(left: 60),
+                  padding: const EdgeInsets.only(left: 15),
                   child: Column(
                     children: [
                       Row(
                         children: [
-                          Container(
-                            height: 28,
-                            width: 28,
-                            decoration: BoxDecoration(
-                                border:
-                                    Border.all(color: const Color(0xff00A99D))),
-                          ),
+                          squareInput(),
                           const SizedBox(width: 3),
-                          Container(
-                            height: 28,
-                            width: 28,
-                            decoration: BoxDecoration(
-                                border:
-                                    Border.all(color: const Color(0xff00A99D))),
-                          ),
+                          squareInput(),
                           const SizedBox(width: 3),
-                          Container(
-                            height: 28,
-                            width: 28,
-                            decoration: BoxDecoration(
-                                border:
-                                    Border.all(color: const Color(0xff00A99D))),
-                          ),
+                          squareInput(),
                           const SizedBox(width: 3),
-                          Container(
-                            height: 28,
-                            width: 28,
-                            decoration: BoxDecoration(
-                                border:
-                                    Border.all(color: const Color(0xff00A99D))),
-                          )
-                        ],
-                      ),
-                      const SizedBox(height: 3),
-                      Row(
-                        children: [
-                          Container(
-                            height: 28,
-                            width: 28,
-                            decoration: BoxDecoration(
-                                border:
-                                    Border.all(color: const Color(0xff00A99D))),
-                          ),
+                          squareInput(),
                           const SizedBox(width: 3),
-                          Container(
-                            height: 28,
-                            width: 28,
-                            decoration: BoxDecoration(
-                                border:
-                                    Border.all(color: const Color(0xff00A99D))),
-                          ),
+                          squareInput(),
                           const SizedBox(width: 3),
-                          Container(
-                            height: 28,
-                            width: 28,
-                            decoration: BoxDecoration(
-                                border:
-                                    Border.all(color: const Color(0xff00A99D))),
-                          ),
+                          squareInput(),
                           const SizedBox(width: 3),
-                          Container(
-                            height: 28,
-                            width: 28,
-                            decoration: BoxDecoration(
-                                border:
-                                    Border.all(color: const Color(0xff00A99D))),
-                          ),
+                          squareInput(),
+                          const SizedBox(width: 3),
+                          squareInput(),
                         ],
                       ),
                     ],
@@ -161,6 +111,15 @@ class _ConnectionState extends State<Connection> {
             child:
                 Image(height: 100, image: AssetImage("images/rightlogo.png"))),
       ],
+    );
+  }
+
+  Widget squareInput() {
+    return Container(
+      height: 25,
+      width: 25,
+      decoration:
+          BoxDecoration(border: Border.all(color: const Color(0xff00A99D))),
     );
   }
 }

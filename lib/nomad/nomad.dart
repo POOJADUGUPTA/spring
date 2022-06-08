@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:spring/nomad/checkin.dart';
 import 'package:spring/nomad/secure%20connection.dart';
 
+//LaunchCheckinmobileview
 class Nomad extends StatefulWidget {
   const Nomad({Key? key}) : super(key: key);
 
@@ -17,24 +18,31 @@ class _NomadState extends State<Nomad> {
       body: SafeArea(
         child: Column(children: [
           topLogo(),
-          GestureDetector(
-            onTap: () {
-              Navigator.push(context,
-                  MaterialPageRoute(builder: (context) => const CheckIn()));
-            },
-            child: nomadScreen(
-                text: "Check-In To Your\nWorkspace",
-                image: "images/rightlogo.png"),
-          ),
-          const SizedBox(height: 20),
-          GestureDetector(
-            onTap: () {
-              Navigator.push(context,
-                  MaterialPageRoute(builder: (context) => const Connection()));
-            },
-            child: nomadScreen(
-                text: "Launch A Secure\nConnection",
-                image: "images/securelogo.png"),
+          Row(
+            mainAxisAlignment: MainAxisAlignment.center,
+            children: [
+              GestureDetector(
+                onTap: () {
+                  Navigator.push(context,
+                      MaterialPageRoute(builder: (context) => const CheckIn()));
+                },
+                child: nomadScreen(
+                    text: "Check-In To Your\nWorkspace",
+                    image: "images/rightlogo.png"),
+              ),
+              const SizedBox(width: 50),
+              GestureDetector(
+                onTap: () {
+                  Navigator.push(
+                      context,
+                      MaterialPageRoute(
+                          builder: (context) => const Connection()));
+                },
+                child: nomadScreen(
+                    text: "Launch A Secure\nConnection",
+                    image: "images/securelogo.png"),
+              ),
+            ],
           ),
         ]),
       ),
@@ -58,7 +66,7 @@ class _NomadState extends State<Nomad> {
     return Stack(
       children: [
         Container(
-          margin: const EdgeInsets.only(top: 50),
+          margin: const EdgeInsets.only(top: 100),
           height: 167,
           decoration: BoxDecoration(
               color: Colors.white, borderRadius: BorderRadius.circular(20)),
@@ -83,6 +91,7 @@ class _NomadState extends State<Nomad> {
           ),
         ),
         Positioned(
+            top: 40,
             left: 75,
             child: Image(height: 100, image: AssetImage(image ?? ""))),
       ],

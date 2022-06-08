@@ -190,10 +190,8 @@ class _ListYourSpaceState extends State<ListYourSpace> {
     return Container(
       margin: const EdgeInsets.only(top: 5),
       padding: EdgeInsets.only(
-          bottom: MediaQuery.of(context).size.width * 0.010,
-          top: MediaQuery.of(context).size.width * 0.010,
-          left: MediaQuery.of(context).size.width * 0.366,
-          right: MediaQuery.of(context).size.width * 0.366),
+          left: MediaQuery.of(context).size.width * 0.336,
+          right: MediaQuery.of(context).size.width * 0.336),
       decoration: BoxDecoration(
         color: const Color(0xff00A99D),
         borderRadius: BorderRadius.circular(5),
@@ -201,7 +199,7 @@ class _ListYourSpaceState extends State<ListYourSpace> {
       ),
       child: TextButton(
         child: const Text("Submit",
-            style: TextStyle(fontSize: 12, color: Color(0xffFFFFFF))),
+            style: TextStyle(fontSize: 13, color: Color(0xffFFFFFF))),
         onPressed: () {
           if (formKey.currentState!.validate()) {
             UserService().hostlogin({

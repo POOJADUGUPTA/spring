@@ -10,30 +10,34 @@ class Message extends StatefulWidget {
 class _MessageState extends State<Message> {
   @override
   Widget build(BuildContext context) {
-    return Container(
-      padding: const EdgeInsets.all(20),
-      color: const Color(0xff00A99D),
-      child: Center(
-        child: SingleChildScrollView(
-          child: Column(
-            children: [
-              const SizedBox(height: 10),
-              const Image(height: 60, image: AssetImage("images/nomad.png")),
-              const SizedBox(height: 15),
-              const Text(
-                'Lorem ipsum dolor sit amet, consecrated adipiscing elit. Maecenas eu tristique justo. Sed vehicula felis ut lacus convallis, in feugiat leo rhoncus.\n Nam pharetra ornare enim. Proin et pretium sem. Phasellus euismod augue vel ex placerat blandit. Sed molestie at sem in faucibus. Praesent eu \n tincidunt dolor, ac viverra metus. Nulla lacinia purus arcu, non gravida leo fermentum eget. Mauris dignissim orci ac nibh tincidunt malesuada.\n Nulla mi nulla, sollicitudin quis ullamcorper sit amet, fringilla aliquam orci. Vivamus pellentesque pulvinar luctus. Nullam lacinia massa Quis \n scelerisque sagittis. Proin ullamcorper, Metus vel blandit posuere, sem eros feugiat dolor, id sagittis ex nisl quis lacus. Morbi neque elit, Semper \n                                                                                            pretium auctor eu, ornare eu dui\n\n  Morbi orci ligula, tincidunt quis faucibus quis, auctor euismod risus. Aenean varius tempus orci, eu dignissim lacus Euismod at. Sed Tincidunt Nec \n     Risus nec aliquam. Aliquam vehicula non leo a dictum. Donec est augue, lacinia a ullamcorper at, mattis in diam. Praesent maximus consequat \n  Ligula, et placerat diam euismod a. Donec auctor elit id felis malesuada condimentum. Vivamus ut sodales mi, ac egestas sapien. Duis elementum \n                                                                                                                magna risus.\n\n Vestibulum varius leo vel justo commodo sollicitudin. Etiam eleifend libero non turpis rhoncus, a venenatis dolor varius. Nullam eget sapien quis ipsum rhoncus feugiat eget eget velit. Suspendisse facilisis elit tortor, et pulvinar sem pharetra at. Nulla viverra risus justo, id ullamcorper libero \n hendrerit a. Donec suscipit arcu leo, sed feugiat est feugiat vitae. Vivamus gravida congue lacus a congue. Aliquam auctor tempus odio, Non\n                                                                                                    Dictum sem vestibulum A.\n\n Proin sem nisi, condimentum ut risus et, auctor dignissim neque. Curabitur nec ex a nisi semper semper. Proin orci nunc, ultricies dictum odio non,\n     Rutrum sodales dui. Maecenas ultricies et nisi at feugiat. Sed non quam hendrerit, facilisis nulla vitae, rutrum est. In dictum purus ut Cursus \n                                 Rhoncus. Nam eget suscipit tortor, at fringilla nulla. Integer pellentesque erat interdum auctor elementum.',
-                textAlign: TextAlign.center,
-                style: TextStyle(
-                  fontSize: 12,
-                  letterSpacing: 1.2,
-                  color: Colors.white,
-                  fontWeight: FontWeight.w400,
+    return Scaffold(
+      backgroundColor: Color(0xff00A99D),
+      body: Container(
+        margin:
+            EdgeInsets.only(bottom: MediaQuery.of(context).size.height * 0.050),
+        padding: const EdgeInsets.all(20),
+        child: Center(
+          child: SingleChildScrollView(
+            child: Column(
+              children: [
+                const SizedBox(height: 10),
+                const Image(height: 60, image: AssetImage("images/nomad.png")),
+                const SizedBox(height: 15),
+                const Text(
+                  'Lorem ipsum dolor sit amet, consecrated adipiscing elit. Maecenas eu tristique justo. Sed vehicula felis ut lacus convallis, in feugiat leo rhoncus.\n Nam pharetra ornare enim. Proin et pretium sem. Phasellus euismod augue vel ex placerat blandit. Sed molestie at sem in faucibus. Praesent eu \n tincidunt dolor, ac viverra metus. Nulla lacinia purus arcu, non gravida leo fermentum eget. Mauris dignissim orci ac nibh tincidunt malesuada.\n Nulla mi nulla, sollicitudin quis ullamcorper sit amet, fringilla aliquam orci. Vivamus pellentesque pulvinar luctus. Nullam lacinia massa Quis \n scelerisque sagittis. Proin ullamcorper, Metus vel blandit posuere, sem eros feugiat dolor, id sagittis ex nisl quis lacus. Morbi neque elit, Semper \n                                                                                            pretium auctor eu, ornare eu dui\n\n  Morbi orci ligula, tincidunt quis faucibus quis, auctor euismod risus. Aenean varius tempus orci, eu dignissim lacus Euismod at. Sed Tincidunt Nec \n     Risus nec aliquam. Aliquam vehicula non leo a dictum. Donec est augue, lacinia a ullamcorper at, mattis in diam. Praesent maximus consequat \n  Ligula, et placerat diam euismod a. Donec auctor elit id felis malesuada condimentum. Vivamus ut sodales mi, ac egestas sapien. Duis elementum \n                                                                                                                magna risus.\n\n Vestibulum varius leo vel justo commodo sollicitudin. Etiam eleifend libero non turpis rhoncus, a venenatis dolor varius. Nullam eget sapien quis ipsum rhoncus feugiat eget eget velit. Suspendisse facilisis elit tortor, et pulvinar sem pharetra at. Nulla viverra risus justo, id ullamcorper libero \n hendrerit a. Donec suscipit arcu leo, sed feugiat est feugiat vitae. Vivamus gravida congue lacus a congue. Aliquam auctor tempus odio, Non\n                                                                                                    Dictum sem vestibulum A.\n\n Proin sem nisi, condimentum ut risus et, auctor dignissim neque. Curabitur nec ex a nisi semper semper. Proin orci nunc, ultricies dictum odio non,\n     Rutrum sodales dui. Maecenas ultricies et nisi at feugiat. Sed non quam hendrerit, facilisis nulla vitae, rutrum est. In dictum purus ut Cursus \n                                 Rhoncus. Nam eget suscipit tortor, at fringilla nulla. Integer pellentesque erat interdum auctor elementum.',
+                  textAlign: TextAlign.center,
+                  style: TextStyle(
+                    fontSize: 12,
+                    letterSpacing: 1.2,
+                    color: Colors.white,
+                    fontWeight: FontWeight.w400,
+                  ),
                 ),
-              ),
-              const SizedBox(height: 15),
-              acceptButton(),
-              const SizedBox(height: 40)
-            ],
+                const SizedBox(height: 15),
+                acceptButton(),
+                const SizedBox(height: 40)
+              ],
+            ),
           ),
         ),
       ),
