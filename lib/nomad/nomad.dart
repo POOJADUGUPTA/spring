@@ -18,31 +18,23 @@ class _NomadState extends State<Nomad> {
       body: SafeArea(
         child: Column(children: [
           topLogo(),
-          Row(
-            mainAxisAlignment: MainAxisAlignment.center,
-            children: [
-              GestureDetector(
-                onTap: () {
-                  Navigator.push(context,
-                      MaterialPageRoute(builder: (context) => const CheckIn()));
-                },
-                child: nomadScreen(
-                    text: "Check-In To Your\nWorkspace",
-                    image: "images/rightlogo.png"),
-              ),
-              const SizedBox(width: 50),
-              GestureDetector(
-                onTap: () {
-                  Navigator.push(
-                      context,
-                      MaterialPageRoute(
-                          builder: (context) => const Connection()));
-                },
-                child: nomadScreen(
-                    text: "Launch A Secure\nConnection",
-                    image: "images/securelogo.png"),
-              ),
-            ],
+          GestureDetector(
+            onTap: () {
+              Navigator.push(context,
+                  MaterialPageRoute(builder: (context) => const CheckIn()));
+            },
+            child: nomadScreen(
+                text: "Check-In To Your\nWorkspace",
+                image: "images/rightlogo.png"),
+          ),
+          GestureDetector(
+            onTap: () {
+              Navigator.push(context,
+                  MaterialPageRoute(builder: (context) => const Connection()));
+            },
+            child: nomadScreen(
+                text: "Launch A Secure\nConnection",
+                image: "images/securelogo.png"),
           ),
         ]),
       ),
@@ -66,7 +58,7 @@ class _NomadState extends State<Nomad> {
     return Stack(
       children: [
         Container(
-          margin: const EdgeInsets.only(top: 100),
+          margin: const EdgeInsets.only(top: 80),
           height: 167,
           decoration: BoxDecoration(
               color: Colors.white, borderRadius: BorderRadius.circular(20)),
@@ -91,7 +83,7 @@ class _NomadState extends State<Nomad> {
           ),
         ),
         Positioned(
-            top: 40,
+            top: 20,
             left: 75,
             child: Image(height: 100, image: AssetImage(image ?? ""))),
       ],

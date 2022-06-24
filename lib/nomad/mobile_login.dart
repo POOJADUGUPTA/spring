@@ -14,8 +14,10 @@ class _MobileLoginState extends State<MobileLogin> {
       resizeToAvoidBottomInset: false,
       backgroundColor: const Color(0xff00A99D),
       body: SafeArea(
-        child: Column(
-          children: [topLogo(), dialogContainer()],
+        child: SingleChildScrollView(
+          child: Column(
+            children: [topLogo(), dialogContainer()],
+          ),
         ),
       ),
     );
@@ -39,12 +41,12 @@ class _MobileLoginState extends State<MobileLogin> {
   }
 
   Widget dialogContainer() {
-    return Container(
+    return SizedBox(
       width: MediaQuery.of(context).size.width / 1.3,
       child: Dialog(
         shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(20)),
         insetPadding: EdgeInsets.symmetric(
-          vertical: MediaQuery.of(context).size.height * 0.120,
+          vertical: MediaQuery.of(context).size.height * 0.060,
         ),
         child: Stack(
           alignment: Alignment.topCenter,
@@ -126,8 +128,8 @@ class _MobileLoginState extends State<MobileLogin> {
     return MaterialButton(
       color: const Color(0xff00A99D),
       onPressed: () {},
-      child: Container(
-        width: MediaQuery.of(context).size.width / 1.5,
+      child: SizedBox(
+        width: MediaQuery.of(context).size.width / 1.62,
         height: MediaQuery.of(context).size.height * 0.080,
         child: const FittedBox(
           child: Text("Continue",
@@ -199,7 +201,7 @@ class _MobileLoginState extends State<MobileLogin> {
   Widget facebookButton() {
     return Container(
       margin: EdgeInsets.only(
-        bottom: MediaQuery.of(context).size.height * 0.020,
+        bottom: MediaQuery.of(context).size.height * 0.050,
         left: MediaQuery.of(context).size.width * 0.035,
         right: MediaQuery.of(context).size.width * 0.035,
       ),

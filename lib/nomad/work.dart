@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:spring/apiconstants/home_ui.dart';
 import 'package:spring/nomad/favorite.dart';
 import 'package:spring/nomad/message.dart';
 import 'package:spring/nomad/nomad.dart';
@@ -26,7 +27,7 @@ class _WorkWhereYouAreState extends State<WorkWhereYouAre> {
 
   List<Widget> widgetOptions = <Widget>[
     Search(),
-    FavoriteListMobileView(),
+    Home(),
     Nomad(),
     Message(),
     ListYourSpace(),
@@ -47,7 +48,7 @@ class _WorkWhereYouAreState extends State<WorkWhereYouAre> {
     return BottomNavigationBar(
       elevation: 0,
       type: BottomNavigationBarType.fixed,
-      backgroundColor: const Color(0x00ffffff).withOpacity(0.001),
+      backgroundColor: Colors.cyan,
       currentIndex: selectedIndex,
       showSelectedLabels: false,
       showUnselectedLabels: false,
