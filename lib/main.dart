@@ -12,7 +12,9 @@ import 'package:spring/notify.dart';
 import 'package:spring/post_api/emp.dart';
 import 'package:spring/post_api/user_response.dart';
 import 'package:spring/praman/Onionlot.dart';
+import 'package:spring/praman/commodities.dart';
 import 'package:spring/review&confirm.dart';
+import 'package:spring/salon/booknow.dart';
 import 'package:spring/salon/signinpage.dart';
 import 'package:spring/salon/splashpage.dart';
 import 'package:spring/services/api.dart';
@@ -42,7 +44,7 @@ class MyApp extends StatelessWidget {
         theme: ThemeData(
           primarySwatch: Colors.blue,
         ),
-        home: WorkWhereYouAre());
+        home: SplashPage());
   }
 }
 

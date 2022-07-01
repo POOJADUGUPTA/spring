@@ -16,6 +16,7 @@ class _SigninPageState extends State<SigninPage> {
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.center,
           children: [
+            const SizedBox(height: 20),
             profileImage(),
             titleText(),
             const SizedBox(height: 20),
@@ -33,7 +34,7 @@ class _SigninPageState extends State<SigninPage> {
   }
 
   Widget profileImage() {
-    return const Image(height: 100, image: AssetImage("images/signinlogo.jpg"));
+    return const Image(height: 100, image: AssetImage("images/securelogo.png"));
   }
 
   Widget titleText() {
@@ -45,64 +46,32 @@ class _SigninPageState extends State<SigninPage> {
   Widget socialIcon() {
     return Column(
       children: [
-        Container(
-          margin: const EdgeInsets.only(left: 10, right: 10),
-          padding: const EdgeInsets.all(10),
-          decoration: BoxDecoration(
-              borderRadius: BorderRadius.circular(10),
-              border: Border.all(width: 0.5, color: Colors.black12)),
-          child: Row(
-            mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-            children: [
-              Image.asset("images/facebook.jpeg", height: 20),
-              const Text("Continue with Facebook",
-                  style: TextStyle(fontWeight: FontWeight.bold, fontSize: 15)),
-            ],
-          ),
-        ),
+        socialIconCommon("images/facebook.png", "Continue with Facebook"),
         const SizedBox(height: 10),
-        Column(
-          children: [
-            Container(
-              margin: const EdgeInsets.only(left: 10, right: 10),
-              padding: const EdgeInsets.all(10),
-              decoration: BoxDecoration(
-                  borderRadius: BorderRadius.circular(10),
-                  border: Border.all(width: 0.4, color: Colors.black12)),
-              child: Row(
-                mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-                children: [
-                  Image.asset("images/google.png", height: 20),
-                  const Text("Continue with Google",
-                      style:
-                          TextStyle(fontWeight: FontWeight.bold, fontSize: 15)),
-                ],
-              ),
-            ),
-          ],
-        ),
+        socialIconCommon("images/google.png", "Continue with Google"),
         const SizedBox(height: 10),
-        Column(
-          children: [
-            Container(
-              margin: const EdgeInsets.only(left: 10, right: 10),
-              padding: const EdgeInsets.all(10),
-              decoration: BoxDecoration(
-                  borderRadius: BorderRadius.circular(10),
-                  border: Border.all(width: 0.4, color: Colors.black12)),
-              child: Row(
-                mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-                children: [
-                  Image.asset("images/apple.jpeg", height: 20),
-                  const Text("Continue with Apple",
-                      style:
-                          TextStyle(fontWeight: FontWeight.bold, fontSize: 15)),
-                ],
-              ),
-            ),
-          ],
-        ),
+        socialIconCommon("images/star.png", "Continue with Apple")
       ],
+    );
+  }
+
+  Widget socialIconCommon(String? image, String? text) {
+    return Container(
+      margin: const EdgeInsets.only(left: 10, right: 10),
+      padding: const EdgeInsets.symmetric(vertical: 10, horizontal: 60),
+      decoration: BoxDecoration(
+          borderRadius: BorderRadius.circular(10),
+          border: Border.all(width: 0.5, color: Colors.black12)),
+      child: Row(
+        mainAxisAlignment: MainAxisAlignment.start,
+        children: [
+          Image.asset(image!, height: 20),
+          const SizedBox(width: 40),
+          Text(text!,
+              style:
+                  const TextStyle(fontWeight: FontWeight.bold, fontSize: 15)),
+        ],
+      ),
     );
   }
 

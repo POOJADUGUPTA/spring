@@ -27,7 +27,14 @@ class _HaircutsListState extends State<HaircutsList> {
                     itemCount: 5,
                     scrollDirection: Axis.vertical,
                     itemBuilder: (BuildContext context, int index) {
-                      return textContainer();
+                      return GestureDetector(
+                          onTap: () {
+                            Navigator.push(
+                                context,
+                                MaterialPageRoute(
+                                    builder: (context) => BookNow()));
+                          },
+                          child: textContainer());
                     }),
               )
             ],
@@ -43,39 +50,48 @@ class _HaircutsListState extends State<HaircutsList> {
         Row(
           children: [
             IconButton(
-              icon: const Icon(Icons.arrow_back),
-              iconSize: 25,
-              color: Colors.black54,
-              onPressed: () {
-                Navigator.push(context,
-                    MaterialPageRoute(builder: (context) => const BookNow()));
-              },
-            ),
+                icon: const Icon(Icons.arrow_back),
+                iconSize: 25,
+                color: Colors.black54,
+                onPressed: () {
+                  Navigator.of(context).pop();
+                }),
             const SizedBox(width: 10),
             const Text("Haircuts",
                 style: TextStyle(fontWeight: FontWeight.w700, fontSize: 20))
           ],
         ),
         const SizedBox(height: 20),
-        Container(
-          padding:
-              EdgeInsets.only(left: MediaQuery.of(context).size.width * 0.050),
-          height: 40,
-          decoration: BoxDecoration(
-              color: Colors.grey.shade200,
-              borderRadius: BorderRadius.circular(6)),
-          child: Row(
-            children: [
-              Icon(Icons.search, size: 25, color: Colors.grey.shade400),
-              const SizedBox(width: 10),
-              Text("Search",
-                  style: TextStyle(
-                      fontSize: 14,
-                      fontWeight: FontWeight.bold,
-                      color: Colors.grey.shade400))
-            ],
+        SizedBox(
+          height: 50,
+          child: TextField(
+            cursorColor: Colors.black,
+            decoration: InputDecoration(
+              border: OutlineInputBorder(
+                borderRadius: BorderRadius.circular(8),
+                borderSide: const BorderSide(
+                  color: Color(0xffDAEAF1),
+                  width: 1.0,
+                ),
+              ),
+              focusedBorder: OutlineInputBorder(
+                borderRadius: BorderRadius.circular(8),
+                borderSide: const BorderSide(
+                  color: Colors.grey,
+                  width: 1.0,
+                ),
+              ),
+              hintText: 'Search',
+              prefixIcon: IconButton(
+                onPressed: () {},
+                icon: const Icon(
+                  Icons.search,
+                  color: Colors.grey,
+                ),
+              ),
+            ),
           ),
-        )
+        ),
       ],
     );
   }
@@ -91,10 +107,11 @@ class _HaircutsListState extends State<HaircutsList> {
                 ClipRRect(
                     borderRadius: BorderRadius.circular(12),
                     child: const Image(
-                        height: 70, image: AssetImage("images/hair.jpeg"))),
+                        height: 70,
+                        image: AssetImage(
+                            "images/coworkers-team-working-brainstorming-concept 1.png"))),
                 Container(
-                  padding: EdgeInsets.only(
-                      left: MediaQuery.of(context).size.width * 0.040),
+                  padding: const EdgeInsets.symmetric(horizontal: 50),
                   child: Column(
                     crossAxisAlignment: CrossAxisAlignment.start,
                     children: [

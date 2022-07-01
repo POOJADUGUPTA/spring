@@ -1,3 +1,5 @@
+import 'dart:async';
+
 import 'package:flutter/material.dart';
 import 'package:spring/post_api/emppost.dart';
 import 'package:spring/post_api/user_response.dart';
@@ -11,6 +13,7 @@ class SignupPage extends StatefulWidget {
 }
 
 class _SignupPageState extends State<SignupPage> {
+  bool _value = false;
   bool isPressed = false;
   final formGlobalKey = GlobalKey<FormState>();
   final emailcontroller = TextEditingController();
@@ -72,74 +75,63 @@ class _SignupPageState extends State<SignupPage> {
   Widget enterEmailPassword() {
     return Column(
       children: [
-        TextFormField(
-            cursorColor: Colors.black,
-            autovalidateMode: AutovalidateMode.onUserInteraction,
-            controller: emailcontroller,
-            decoration: InputDecoration(
-              filled: true,
-              fillColor: const Color(0xffEFEFEF),
-              border: OutlineInputBorder(
-                  borderSide: BorderSide.none,
-                  borderRadius: BorderRadius.circular(5)),
-              hintText: "Email",
-              hintStyle: const TextStyle(
-                  color: Colors.grey,
-                  fontWeight: FontWeight.bold,
-                  fontSize: 10),
-              icon: const Icon(Icons.email, color: Colors.grey, size: 20),
-            ),
-            keyboardType: TextInputType.emailAddress,
-            validator: (email) {
-              if (email!.isEmpty) {
-                return "Email Address Can not be empty";
-              }
-            }),
+        enterEmailPasswordCommon(Icons.email, emailcontroller, "Email",
+            "Email Address can not be empty"),
         const SizedBox(height: 15),
-        TextFormField(
-            cursorColor: Colors.black,
-            autovalidateMode: AutovalidateMode.onUserInteraction,
-            controller: passwordcontroller,
-            decoration: InputDecoration(
-              filled: true,
-              fillColor: const Color(0xffEFEFEF),
-              border: OutlineInputBorder(
-                  borderSide: BorderSide.none,
-                  borderRadius: BorderRadius.circular(5)),
-              hintText: "Password",
-              hintStyle: const TextStyle(
-                  color: Colors.grey,
-                  fontWeight: FontWeight.bold,
-                  fontSize: 10),
-              icon: const Icon(Icons.lock, color: Colors.grey, size: 20),
-            ),
-            keyboardType: TextInputType.visiblePassword,
-            validator: (password) {
-              if (password!.isEmpty) {
-                return "Password Can not be empty";
-              }
-            }),
+        enterEmailPasswordCommon(Icons.lock, passwordcontroller, "Password",
+            "Password can not be empty")
       ],
     );
   }
 
+  Widget enterEmailPasswordCommon(IconData? icon,
+      TextEditingController? controller, String? hinttext, String? validator) {
+    return TextFormField(
+        cursorColor: Colors.black,
+        autovalidateMode: AutovalidateMode.onUserInteraction,
+        controller: controller!,
+        decoration: InputDecoration(
+          filled: true,
+          fillColor: const Color(0xffEFEFEF),
+          border: OutlineInputBorder(
+              borderSide: BorderSide.none,
+              borderRadius: BorderRadius.circular(5)),
+          hintText: hinttext!,
+          hintStyle: const TextStyle(
+              color: Colors.grey, fontWeight: FontWeight.bold, fontSize: 10),
+          prefixIcon: Icon(icon!, color: Colors.grey, size: 20),
+        ),
+        keyboardType: TextInputType.emailAddress,
+        validator: (validator) {
+          if (validator!.isEmpty) {
+            return validator;
+          }
+        });
+  }
+
   Widget tickButton() {
-    return Container(
-      padding: EdgeInsets.only(left: MediaQuery.of(context).size.width * 0.300),
-      child: Row(
-        children: const [
-          Icon(
-            Icons.check_box_outline_blank,
-            color: Color(0xffEC994B),
-          ),
-          SizedBox(width: 15),
-          Text("Remember me",
-              style: TextStyle(
-                  color: Colors.black54,
-                  fontSize: 10,
-                  fontWeight: FontWeight.w900))
-        ],
-      ),
+    return Row(
+      mainAxisAlignment: MainAxisAlignment.center,
+      children: [
+        Checkbox(
+          autofocus: false,
+          activeColor: Colors.orange,
+          checkColor: Colors.white,
+          // selected: _value,
+          value: _value,
+          onChanged: (bool? value) {
+            setState(() {
+              _value = value!;
+            });
+          },
+        ),
+        const SizedBox(width: 15),
+        const Text("Remember me",
+            style: TextStyle(
+                color: Colors.black54,
+                fontSize: 10,
+                fontWeight: FontWeight.w900))
+      ],
     );
   }
 
@@ -197,55 +189,26 @@ class _SignupPageState extends State<SignupPage> {
   Widget socialLogo() {
     return Row(
       children: [
-        Container(
-          margin:
-              EdgeInsets.only(left: MediaQuery.of(context).size.width * 0.200),
-          padding: EdgeInsets.only(
-            left: MediaQuery.of(context).size.width * 0.040,
-            right: MediaQuery.of(context).size.width * 0.040,
-            top: MediaQuery.of(context).size.width * 0.020,
-            bottom: MediaQuery.of(context).size.width * 0.020,
-          ),
-          decoration: BoxDecoration(
-              border: Border.all(color: Colors.black26),
-              borderRadius: BorderRadius.circular(10)),
-          child: Image.asset("images/facebook.jpeg", height: 20),
-        ),
-        const SizedBox(width: 15),
-        Container(
-          padding: EdgeInsets.only(
-            left: MediaQuery.of(context).size.width * 0.040,
-            right: MediaQuery.of(context).size.width * 0.040,
-            top: MediaQuery.of(context).size.width * 0.020,
-            bottom: MediaQuery.of(context).size.width * 0.020,
-          ),
-          decoration: BoxDecoration(
-              border: Border.all(color: Colors.black26),
-              borderRadius: BorderRadius.circular(10)),
-          child: Image.asset("images/google.png", height: 20),
-        ),
-        const SizedBox(width: 15),
-        Container(
-          margin:
-              EdgeInsets.only(right: MediaQuery.of(context).size.width * 0.200),
-          padding: EdgeInsets.only(
-            left: MediaQuery.of(context).size.width * 0.040,
-            right: MediaQuery.of(context).size.width * 0.040,
-            top: MediaQuery.of(context).size.width * 0.020,
-            bottom: MediaQuery.of(context).size.width * 0.020,
-          ),
-          decoration: BoxDecoration(
-              border: Border.all(color: Colors.black26),
-              borderRadius: BorderRadius.circular(10)),
-          child: Image.asset("images/apple.jpeg", height: 20),
-        ),
+        socialLogoCommon("images/facebook.png"),
+        socialLogoCommon("images/google.png"),
+        socialLogoCommon("images/star.png")
       ],
     );
   }
 
-  Widget hintSignin() {
+  Widget socialLogoCommon(String? image) {
     return Container(
-      padding: EdgeInsets.only(left: MediaQuery.of(context).size.width * 0.220),
+      margin: EdgeInsets.only(left: MediaQuery.of(context).size.width * 0.110),
+      padding: const EdgeInsets.symmetric(horizontal: 20, vertical: 10),
+      decoration: BoxDecoration(
+          border: Border.all(color: Colors.black26),
+          borderRadius: BorderRadius.circular(10)),
+      child: Image.asset(image!, height: 20),
+    );
+  }
+
+  Widget hintSignin() {
+    return Center(
       child: RichText(
           text: const TextSpan(
         children: [

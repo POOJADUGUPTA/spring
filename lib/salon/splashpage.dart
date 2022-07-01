@@ -33,7 +33,7 @@ class _SplashPageState extends State<SplashPage> {
             children: const [
               Image(
                 height: 400,
-                image: AssetImage("images/clogo.jpeg"),
+                image: AssetImage("images/lighht_greenishscreen.png"),
               )
             ]));
   }
